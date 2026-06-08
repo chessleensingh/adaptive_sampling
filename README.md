@@ -17,9 +17,6 @@ src/
 │   └── ont_to_dss/
 │       └── extract_ont_buffered.py         # ONT bedMethyl → DSS format conversion
 └── rna/
-    ├── deseq2_pairwise.R           # Pairwise DESeq2 contrasts (all timepoints)
-    ├── deseq2_timepoint.R          # Timepoint-level DESeq2 analysis
-    ├── pca_analysis.R              # PCA of normalised counts
     └── scripts/                   # STAR alignment pipeline (HPC SLURM)
         ├── 00_setup.sh
         ├── 01_fastqc_raw.sh
@@ -94,13 +91,7 @@ Shell scripts designed for execution on an HPC cluster with SLURM. Run sequentia
 | `deseq2.R` | DESeq2 | Differential expression analysis |
 | `normalize_counts.R` | DESeq2/edgeR | Count normalisation (VST/TMM) |
 
-### Differential Expression (`rna/`)
 
-| Script | Description |
-|--------|-------------|
-| `deseq2_pairwise.R` | All pairwise DESeq2 contrasts (Race 1 vs. mock, Race 25 vs. mock, Race 25 vs. Race 1) at 12 hpi and 24 hpi |
-| `deseq2_timepoint.R` | Timepoint-level DESeq2 analysis |
-| `pca_analysis.R` | Principal component analysis of VST-normalised counts with sample grouping |
 
 **Dependencies:** R ≥ 4.2, `DESeq2`, `ggplot2`, `dplyr`, `data.table`
 
